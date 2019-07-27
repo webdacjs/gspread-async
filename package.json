@@ -1,0 +1,19 @@
+{
+  "name": "gspread-async",
+  "version": "1.0.0",
+  "description": "Wrapper for the google-spreadsheet npm module using modern async methods. ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=8.10.0",
+    "npm": ">=5.6.0"
+  },
+  "author": "Juan Convers",
+  "license": "MIT",
+  "dependencies": {
+    "console-hue": "1.0.2",
+    "google-spreadsheet": "2.0.7"
+  }
+}
