@@ -5,10 +5,11 @@ const getSpreadObj = docid => new GoogleSpreadsheet(docid)
 const sheets = {}
 
 async function authorize (docid, credspath) {
+    const currentPath = process.cwd()
     const doc = getSpreadObj(docid)
     const docUseServiceAsync = promisify(doc.useServiceAccountAuth)
     const docInfoAsync = promisify(doc.getInfo)
-    const creds = require(credspath)
+    const creds = require(`${currentPath}/${credspath}`)
     await docUseServiceAsync(creds)
     const info = await docInfoAsync()
     return info.worksheets
