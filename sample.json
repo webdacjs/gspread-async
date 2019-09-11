@@ -1,5 +1,5 @@
 {
     "docid": "<your spreadsheetid>",
-    "credspath": "<your path with the google credentials file>",
+    "credspath": "./samplecreds.json",
     "sheetid": "<your sheetid>"
   }
