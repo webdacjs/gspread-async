@@ -1,4 +1,3 @@
-// const { promisify } = require('util')
 const prom = require('./promisifyWrapper')
 const checkSettings = require('./checksettings')
 const getSheet = require('./getsheet')
