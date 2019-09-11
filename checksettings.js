@@ -1,6 +1,6 @@
-const { promisify } = require('util')
+const prom = require('./promisifyWrapper')
 const fs = require('fs')
-const fsAccessAsync = promisify(fs.access)
+const fsAccessAsync = prom(fs.access)
 const ch = require('console-hue')
 
 const getsCredsPath = filepath => `${process.cwd()}/${filepath}`

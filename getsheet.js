@@ -1,5 +1,5 @@
 const GoogleSpreadsheet = require('google-spreadsheet')
-const { promisify } = require('util')
+const prom = require('./promisifyWrapper')
 const ch = require('console-hue')
 const checkSettings = require('./checksettings')
 const getSpreadObj = docid => new GoogleSpreadsheet(docid)
@@ -9,8 +9,8 @@ const getsCredsPath = filepath => `${process.cwd()}/${filepath}`
 
 async function authorize (docid, credspath) {
   const doc = getSpreadObj(docid)
-  const docUseServiceAsync = promisify(doc.useServiceAccountAuth)
-  const docInfoAsync = promisify(doc.getInfo)
+  const docUseServiceAsync = prom(doc.useServiceAccountAuth)
+  const docInfoAsync = prom(doc.getInfo)
   const creds = require(getsCredsPath(credspath))
   await docUseServiceAsync(creds)
   const info = await docInfoAsync()
